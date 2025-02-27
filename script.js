@@ -21,12 +21,68 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedQuizzesContainer = document.getElementById('saved-quizzes-container');
   const toggleImportSectionButton = document.getElementById('toggle-import-section');
   const importSectionContainer = document.getElementById('import-section-container');
+  // Nouveaux éléments pour la section "Comment ça fonctionne"
+  const toggleHowItWorksButton = document.getElementById('toggle-how-it-works');
+  const howItWorksSection = document.getElementById('how-it-works-section');
+  const copyTemplateBtn = document.getElementById('copy-template-btn');
+  const copyMarkdownBtn = document.getElementById('copy-markdown-btn');
 
   let currentQuestionIndex = 0;
   let quizData;
   let selectedAnswerIds = [];
   let correctAnswers = 0;
   let quizzesInStorage = {};
+
+  // Function to copy the template to clipboard
+  if (copyTemplateBtn) {
+    copyTemplateBtn.addEventListener('click', function() {
+      const templateCode = document.querySelector('.info-block.template pre code').textContent;
+      navigator.clipboard.writeText(templateCode).then(function() {
+        const btn = copyTemplateBtn;
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        
+        setTimeout(function() {
+          btn.textContent = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      }, function(err) {
+        console.error('Could not copy text: ', err);
+      });
+    });
+  }
+
+  // Function to copy the Markdown content to clipboard
+  if (copyMarkdownBtn) {
+    copyMarkdownBtn.addEventListener('click', function() {
+      navigator.clipboard.writeText(howItWorksMarkdown).then(function() {
+        const btn = copyMarkdownBtn;
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        
+        setTimeout(function() {
+          btn.textContent = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      }, function(err) {
+        console.error('Could not copy text: ', err);
+      });
+    });
+  }
+
+  // Function to toggle the "How it works" section
+  toggleHowItWorksButton.addEventListener('click', () => {
+    howItWorksSection.classList.toggle('visible');
+    toggleHowItWorksButton.classList.toggle('open');
+    
+    // Close the import section if open
+    if (importSectionContainer.style.display === 'block') {
+      importSectionContainer.style.display = 'none';
+      toggleImportSectionButton.classList.remove('open');
+    }
+  });
 
   // Function to load quizzes from localStorage
   function loadQuizzesFromStorage() {
@@ -544,6 +600,12 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleImportSectionButton.addEventListener('click', () => {
     importSectionContainer.style.display = importSectionContainer.style.display === 'none' ? 'block' : 'none';
     toggleImportSectionButton.classList.toggle('open');
+    
+    // Close the "How it works" section if open
+    if (howItWorksSection.classList.contains('visible')) {
+      howItWorksSection.classList.remove('visible');
+      toggleHowItWorksButton.classList.remove('open');
+    }
   });
 
   // Initialize the application
@@ -552,4 +614,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialization: hide the import section and ensure the button has the correct initial class
   importSectionContainer.style.display = 'none';
   toggleImportSectionButton.classList.remove('open');
+  // Ensure the "How it works" section is hidden initially
+  howItWorksSection.classList.remove('visible');
+  toggleHowItWorksButton.classList.remove('open');
+
+  // Initialisation du contenu Markdown pour la section "Comment ça marche"
+  const markdownContentElement = document.getElementById('markdown-content');
+  
+  // Configuration de marked pour ajouter la classe language-* aux blocs de code
+  marked.setOptions({
+    highlight: function(code, lang) {
+      return code;
+    },
+    langPrefix: 'language-',
+    breaks: true,
+    gfm: true
+  });
+  
+  // Convertir le Markdown en HTML et l'insérer dans la page
+  if (markdownContentElement && typeof howItWorksMarkdown !== 'undefined') {
+    markdownContentElement.innerHTML = marked.parse(howItWorksMarkdown);
+    
+    // Déclencher la coloration syntaxique de Prism après l'insertion du contenu
+    if (typeof Prism !== 'undefined') {
+      Prism.highlightAll();
+    }
+  }
 });

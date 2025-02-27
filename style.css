@@ -483,3 +483,363 @@ button:hover {
   font-size: 0.9rem;
   color: var(--incorrect-color);
 }
+
+/* Styles pour la section "Comment ça fonctionne" */
+.toggle-section-button {
+  width: auto;
+  margin: 20px auto 0;
+  background-color: var(--secondary-color);
+  display: block;
+}
+
+.toggle-section-button::after {
+  content: " ▼";
+}
+
+.toggle-section-button.open::after {
+  content: " ▲";
+}
+
+.info-section {
+  display: none;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  margin-top: 20px;
+  background-color: var(--neutral-color);
+  border-radius: var(--border-radius);
+  padding: 0;
+}
+
+.info-section.visible {
+  display: block;
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-content {
+  padding: 20px;
+}
+
+.info-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 10px;
+}
+
+.info-block {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #dee2e6;
+}
+
+.info-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.info-block h4 {
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.info-block h5 {
+  color: var(--primary-color);
+  margin: 15px 0 5px;
+  font-size: 1rem;
+}
+
+.info-block p {
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.method {
+  margin-bottom: 15px;
+  padding-left: 15px;
+  border-left: 3px solid var(--primary-color);
+  opacity: 0.9;
+}
+
+.method ol {
+  padding-left: 20px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.method li {
+  margin-bottom: 3px;
+}
+
+.info-block.template {
+  background-color: rgba(74, 111, 165, 0.05);
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.info-block.template pre {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  border: 1px solid #e9ecef;
+  text-align: left;
+  margin: 0;
+}
+
+.info-block.template code {
+  display: block;
+  color: #333;
+  line-height: 1.5;
+  text-align: left;
+  white-space: pre;
+}
+
+.info-block a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.info-block a:hover {
+  text-decoration: underline;
+}
+
+.template-warning {
+  margin-top: 10px;
+  color: #856404;
+  background-color: #fff3cd;
+  border-left: 3px solid #ffc107;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.copy-template-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.copy-template-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.copy-template-btn.copied {
+  background-color: var(--correct-color);
+}
+
+/* Styles pour le contenu Markdown */
+#markdown-content {
+  position: relative;
+  padding-top: 40px;
+  /* Ajouter de l'espace pour le bouton de copie */
+}
+
+#markdown-content h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-align: left;
+}
+
+#markdown-content h2 {
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+  margin: 20px 0 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+#markdown-content h3 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin: 15px 0 10px;
+  text-align: left;
+}
+
+#markdown-content p,
+#markdown-content li {
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+#markdown-content ul,
+#markdown-content ol {
+  padding-left: 25px;
+  margin: 10px 0;
+}
+
+#markdown-content code {
+  font-size: 0.95em;
+  font-family: 'Courier New', monospace;
+  border-radius: 4px;
+  padding: 2px 5px;
+  background-color: #f5f5f5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+#markdown-content pre {
+  margin: 15px 0;
+  position: relative;
+}
+
+#markdown-content pre code {
+  display: block;
+  overflow-x: auto;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  white-space: pre;
+  word-wrap: normal;
+  max-width: 100%;
+}
+
+#markdown-content blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding: 10px 15px;
+  margin: 15px 0;
+  background-color: rgba(74, 111, 165, 0.05);
+  color: #666;
+}
+
+#markdown-content a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#markdown-content a:hover {
+  text-decoration: underline;
+}
+
+/* Style pour le bouton de copie du Markdown */
+.copy-markdown-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.copy-markdown-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.copy-markdown-btn.copied {
+  background-color: var(--correct-color);
+}
+
+/* Ajustements pour les blocs de code */
+.language-json {
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Correction pour la largeur du contenu dans la section info */
+.info-section .info-content {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.important,
+.token.important {
+  color: #e90;
+}
+
+.token.regex,
+.token.function {
+  color: #DD4A68;
+}
+
+.token.keyword,
+.token.attr-value,
+.token.atrule,
+.token.variable {
+  color: #07a;
+}
+
+.style .token.string,
+.language-css .token.string,
+.token.url,
+.token.entity,
+.token.operator {
+  color: #a67f59;
+}
+
+.token.builtin,
+.token.char,
+.token.string,
+.token.attr-name,
+.token.selector {
+  color: #690;
+}
+
+.token.symbol,
+.token.constant,
+.token.number,
+.token.boolean,
+.token.tag,
+.token.property {
+  color: #905;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.token.cdata,
+.token.doctype,
+.token.prolog,
+.token.comment {
+  color: #708090;
+}
