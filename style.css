@@ -288,6 +288,12 @@ button:hover {
   margin-bottom: 20px;
 }
 
+#import-section-container {
+  display: none;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
 .import-options {
   display: flex;
   flex-direction: column;
@@ -351,6 +357,20 @@ button:hover {
 #import-json-button {
   width: auto;
   margin-top: 10px;
+}
+
+#toggle-import-section {
+  width: auto;
+  margin-top: 10px;
+  background-color: var(--secondary-color);
+}
+
+#toggle-import-section::after {
+  content: " ▼";
+}
+
+#toggle-import-section.open::after {
+  content: " ▲";
 }
 
 @media (min-width: 768px) {

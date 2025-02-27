@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const jsonInput = document.getElementById('json-input');
   const importJsonButton = document.getElementById('import-json-button');
   const savedQuizzesContainer = document.getElementById('saved-quizzes-container');
+  const toggleImportSectionButton = document.getElementById('toggle-import-section');
+  const importSectionContainer = document.getElementById('import-section-container');
 
   let currentQuestionIndex = 0;
   let quizData;
@@ -403,6 +405,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Event listener pour le bouton "Importer un quiz"
+  toggleImportSectionButton.addEventListener('click', () => {
+    importSectionContainer.style.display = importSectionContainer.style.display === 'none' ? 'block' : 'none';
+    toggleImportSectionButton.classList.toggle('open');
+  });
+
   // Initialiser l'application
   loadQuizzesFromStorage();
+
+  // Initialisation : masquer la section d'import et s'assurer que le bouton a la classe initiale correcte
+  importSectionContainer.style.display = 'none';
+  toggleImportSectionButton.classList.remove('open');
 });

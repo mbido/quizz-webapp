@@ -22,17 +22,20 @@
 
       <div class="quiz-management">
         <h3>Gérer les quiz</h3>
-        <div class="import-section">
-          <h4>Importer un quiz</h4>
-          <div class="import-options">
-            <div class="file-import">
-              <label for="file-input" class="import-label">Depuis un fichier JSON</label>
-              <input type="file" id="file-input" accept=".json" />
-            </div>
-            <div class="text-import">
-              <label for="json-input" class="import-label">Ou collez votre JSON</label>
-              <textarea id="json-input" placeholder="Collez le contenu JSON ici..."></textarea>
-              <button id="import-json-button">Importer</button>
+        <button id="toggle-import-section">Importer un quiz</button>
+        <div id="import-section-container">
+          <div class="import-section">
+            <h4>Importer un quiz</h4>
+            <div class="import-options">
+              <div class="file-import">
+                <label for="file-input" class="import-label">Depuis un fichier JSON</label>
+                <input type="file" id="file-input" accept=".json" />
+              </div>
+              <div class="text-import">
+                <label for="json-input" class="import-label">Ou collez votre JSON</label>
+                <textarea id="json-input" placeholder="Collez le contenu JSON ici..."></textarea>
+                <button id="import-json-button">Importer</button>
+              </div>
             </div>
           </div>
         </div>
