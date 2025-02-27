@@ -282,6 +282,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // Display the quiz title
       quizTitleElement.textContent = quizData.Title || "Quiz";
       
+      // Shuffle the questions array
+      for (let i = quizData.quizz.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [quizData.quizz[i], quizData.quizz[j]] = [quizData.quizz[j], quizData.quizz[i]];
+      }
+
       currentQuestionIndex = 0;
       correctAnswers = 0;
       loadQuestion(currentQuestionIndex);
