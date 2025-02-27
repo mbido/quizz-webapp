@@ -14,9 +14,6 @@
             "items": {
               "type": "object",
               "properties": {
-                "answer id": {
-                  "type": "integer"
-                },
                 "answer": {
                   "type": "string"
                 },
@@ -25,7 +22,6 @@
                 }
               },
               "required": [
-                "answer id",
                 "answer",
                 "is it correct or not"
               ]

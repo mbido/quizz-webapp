@@ -399,11 +399,12 @@ document.addEventListener('DOMContentLoaded', () => {
       [possibleAnswers[i], possibleAnswers[j]] = [possibleAnswers[j], possibleAnswers[i]];
     }
 
-    possibleAnswers.forEach(answer => {
+    possibleAnswers.forEach((answer, index) => {
       const answerElement = document.createElement('div');
       answerElement.classList.add('answer-option');
       answerElement.textContent = answer.answer;
-      answerElement.dataset.answerId = answer["answer id"];
+      // Utiliser l'index comme identifiant au lieu de l'ID fourni dans le JSON
+      answerElement.dataset.answerId = index;
       answerElement.addEventListener('click', selectAnswer);
       answersContainer.appendChild(answerElement);
     });
@@ -447,19 +448,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const currentQuestion = quizData.quizz[currentQuestionIndex];
     
-    // Use the new format to get the correct answers
-    const correctAnswerIds = currentQuestion["Possible answers"]
-      .filter(answer => answer["is it correct or not"])
-      .map(answer => answer["answer id"]);
+    // Récupérer les éléments de réponse dans l'ordre actuel (après le shuffle)
+    const answerElements = document.querySelectorAll('.answer-option');
+    
+    // Déterminer quels sont les indices des réponses correctes
+    const correctAnswerIndices = [];
+    answerElements.forEach((element, index) => {
+      const elementId = parseInt(element.dataset.answerId);
+      const answerObject = currentQuestion["Possible answers"].find((a, i) => {
+        // L'élément sélectionné correspond au texte de la réponse dans le JSON
+        return element.textContent === a.answer;
+      });
+      
+      if (answerObject && answerObject["is it correct or not"]) {
+        correctAnswerIndices.push(elementId);
+      }
+    });
 
     // Check the answers
     let allCorrect = true;
     
     // Check if all correct answers are selected
-    if (selectedAnswerIds.length !== correctAnswerIds.length) {
+    if (selectedAnswerIds.length !== correctAnswerIndices.length) {
       allCorrect = false;
     } else {
-      for (let id of correctAnswerIds) {
+      for (let id of correctAnswerIndices) {
         if (!selectedAnswerIds.includes(id)) {
           allCorrect = false;
           break;
@@ -468,15 +481,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Mark correct and incorrect answers
-    const answerElements = document.querySelectorAll('.answer-option');
     answerElements.forEach(element => {
       const id = parseInt(element.dataset.answerId);
       
-      if (correctAnswerIds.includes(id)) {
+      if (correctAnswerIndices.includes(id)) {
         element.classList.add('correct');
       }
       
-      if (selectedAnswerIds.includes(id) && !correctAnswerIds.includes(id)) {
+      if (selectedAnswerIds.includes(id) && !correctAnswerIndices.includes(id)) {
         element.classList.add('incorrect');
       }
     });

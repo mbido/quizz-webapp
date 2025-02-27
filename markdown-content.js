@@ -49,9 +49,6 @@ Vous pouvez ajouter vos propres quiz de trois façons :
             "items": {
               "type": "object",
               "properties": {
-                "answer id": {
-                  "type": "integer"
-                },
                 "answer": {
                   "type": "string"
                 },
@@ -60,7 +57,6 @@ Vous pouvez ajouter vos propres quiz de trois façons :
                 }
               },
               "required": [
-                "answer id",
                 "answer",
                 "is it correct or not"
               ]
