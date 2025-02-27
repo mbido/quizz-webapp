@@ -14,59 +14,59 @@
     <h1>Quiz WebApp</h1>
 
     <div id="quiz-selection">
-      <h2>Sélectionnez un quiz</h2>
+      <h2>Select a quiz</h2>
       <select id="quiz-dropdown">
-        <option value="">Chargement des quiz...</option>
+        <option value="">Loading quizzes...</option>
       </select>
-      <button id="start-button">Commencer</button>
+      <button id="start-button">Start</button>
 
       <div class="quiz-management">
-        <h3>Gérer les quiz</h3>
-        <button id="toggle-import-section">Importer un quiz</button>
+        <h3>Manage Quizzes</h3>
+        <button id="toggle-import-section">Import a Quiz</button>
         <div id="import-section-container">
           <div class="import-section">
-            <h4>Importer un quiz</h4>
+            <h4>Import a Quiz</h4>
             <div class="import-options">
               <div class="file-import">
-                <label for="file-input" class="import-label">Depuis un fichier JSON</label>
+                <label for="file-input" class="import-label">From a JSON File</label>
                 <input type="file" id="file-input" accept=".json" />
               </div>
               <div class="text-import">
-                <label for="json-input" class="import-label">Ou collez votre JSON</label>
-                <textarea id="json-input" placeholder="Collez le contenu JSON ici..."></textarea>
-                <button id="import-json-button">Importer</button>
+                <label for="json-input" class="import-label">Or Paste Your JSON</label>
+                <textarea id="json-input" placeholder="Paste JSON content here..."></textarea>
+                <button id="import-json-button">Import</button>
               </div>
             </div>
           </div>
         </div>
 
         <div class="manage-section">
-          <h4>Quiz enregistrés</h4>
+          <h4>Saved Quizzes</h4>
           <div id="saved-quizzes-container">
-            <!-- La liste des quiz enregistrés sera ajoutée ici par JavaScript -->
+            <!-- The list of saved quizzes will be added here by JavaScript -->
           </div>
         </div>
       </div>
     </div>
 
     <div id="quiz-area" style="display: none;">
-      <h2 id="quiz-title" class="quiz-active-title">Titre du Quiz</h2>
+      <h2 id="quiz-title" class="quiz-active-title">Quiz Title</h2>
 
       <div class="progress-container">
         <div id="progress-bar"></div>
       </div>
 
       <div id="question-container">
-        <h2 id="question">Question ici</h2>
-        <div class="difficulty-badge" id="difficulty-badge">Facile</div>
+        <h2 id="question">Question here</h2>
+        <div class="difficulty-badge" id="difficulty-badge">Easy</div>
       </div>
 
       <div id="answers-container">
-        <!-- Les réponses seront ajoutées ici par JavaScript -->
+        <!-- Answers will be added here by JavaScript -->
       </div>
 
       <div id="explanation-container" style="display: none;">
-        <h3>Explication</h3>
+        <h3>Explanation</h3>
         <p id="explanation-text"></p>
       </div>
 
@@ -75,13 +75,13 @@
       </div>
 
       <div class="button-container">
-        <button id="submit-button">Soumettre</button>
-        <button id="next-button" style="display: none;">Question suivante</button>
+        <button id="submit-button">Submit</button>
+        <button id="next-button" style="display: none;">Next Question</button>
       </div>
     </div>
 
     <div class="quiz-info">
-      <p id="quiz-stats">Répondez aux questions pour voir vos statistiques</p>
+      <p id="quiz-stats">Answer the questions to see your stats</p>
     </div>
   </div>
   <script src="script.js"></script>
