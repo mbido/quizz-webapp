@@ -8,12 +8,6 @@ A web application for taking quizzes on various topics.
 2.  Navigate to the project directory: `cd quizz-webapp`
 3.  Open `index.html` in your browser.
 
-```sh
-git clone git@github.com:mbido/quizz-webapp.git &&\
-cd quizz-webapp && \
-open index.html
-```
-
 ## Adding a Quiz
 
 There are two ways to add a quiz to the application:

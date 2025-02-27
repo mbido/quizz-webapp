@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedQuizzesContainer = document.getElementById('saved-quizzes-container');
   const toggleImportSectionButton = document.getElementById('toggle-import-section');
   const importSectionContainer = document.getElementById('import-section-container');
-  // Nouveaux éléments pour la section "Comment ça fonctionne"
+  // New elements for the "How it works" section
   const toggleHowItWorksButton = document.getElementById('toggle-how-it-works');
   const howItWorksSection = document.getElementById('how-it-works-section');
   const copyTemplateBtn = document.getElementById('copy-template-btn');
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const answerElement = document.createElement('div');
       answerElement.classList.add('answer-option');
       answerElement.textContent = answer.answer;
-      // Utiliser l'index comme identifiant au lieu de l'ID fourni dans le JSON
+      // Use the index as an identifier instead of the ID provided in the JSON
       answerElement.dataset.answerId = index;
       answerElement.addEventListener('click', selectAnswer);
       answersContainer.appendChild(answerElement);
@@ -452,15 +452,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const currentQuestion = quizData.quizz[currentQuestionIndex];
     
-    // Récupérer les éléments de réponse dans l'ordre actuel (après le shuffle)
+    // Get the answer elements in the current order (after the shuffle)
     const answerElements = document.querySelectorAll('.answer-option');
     
-    // Déterminer quels sont les indices des réponses correctes
+    // Determine which indices are the correct answers
     const correctAnswerIndices = [];
     answerElements.forEach((element, index) => {
       const elementId = parseInt(element.dataset.answerId);
       const answerObject = currentQuestion["Possible answers"].find((a, i) => {
-        // L'élément sélectionné correspond au texte de la réponse dans le JSON
+        // The selected element matches the answer text in the JSON
         return element.textContent === a.answer;
       });
       
@@ -634,11 +634,11 @@ document.addEventListener('DOMContentLoaded', () => {
   howItWorksSection.classList.remove('visible');
   toggleHowItWorksButton.classList.remove('open');
 
-  // Initialisation du contenu Markdown pour la section "Comment ça marche"
+  // Initialization of the Markdown content for the "How it works" section
   const markdownContentElement = document.getElementById('markdown-content');
   
-  // Configuration de marked pour ajouter la classe language-* aux blocs de code
-  // et ajouter un bouton de copie pour chaque bloc de code JSON
+  // Configuration of marked to add the language-* class to code blocks
+  // and add a copy button for each JSON code block
   marked.setOptions({
     highlight: function(code, lang) {
       return code;
@@ -648,16 +648,16 @@ document.addEventListener('DOMContentLoaded', () => {
     gfm: true
   });
   
-  // Convertir le Markdown en HTML et l'insérer dans la page
+  // Convert the Markdown to HTML and insert it into the page
   if (markdownContentElement && typeof howItWorksMarkdown !== 'undefined') {
     markdownContentElement.innerHTML = marked.parse(howItWorksMarkdown);
     
-    // Déclencher la coloration syntaxique de Prism après l'insertion du contenu
+    // Trigger Prism syntax highlighting after inserting the content
     if (typeof Prism !== 'undefined') {
       Prism.highlightAll();
     }
     
-    // Ajouter un bouton de copie pour le bloc de code JSON
+    // Add a copy button for the JSON code block
     const jsonCodeBlock = markdownContentElement.querySelector('pre code.language-json');
     if (jsonCodeBlock && jsonCodeBlock.parentElement) {
       const copyJsonBtn = document.createElement('button');
@@ -677,7 +677,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
       
-      // Ajouter le bouton au parent du bloc de code
+      // Add the button to the parent of the code block
       jsonCodeBlock.parentElement.style.position = 'relative';
       jsonCodeBlock.parentElement.appendChild(copyJsonBtn);
     }

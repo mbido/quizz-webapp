@@ -1,22 +1,22 @@
 const howItWorksMarkdown = `
-# How it works
+# How It Works
 
-## Start a quiz
+## Start a Quiz
 1. Select a quiz from the dropdown list
 2. Click "Start" to begin
 3. Answer the questions and validate with "Submit"
 4. Proceed to the next question with "Next Question"
 
-## Add a quiz
+## Add a Quiz
 You can add your own quizzes in three ways:
 
-### 1. Use the provided examples
+### 1. Use the Provided Examples
 - Copy the JSON content from an example
 - Click "Import a Quiz"
 - Paste the content into the text area
 - Click "Import"
 
-### 2. Create a quiz with Google AI Studio
+### 2. Create a Quiz with Google AI Studio
 - Visit [Google AI Studio](https://makersuite.google.com/)
 - Provide your learning sources
 - Use a model capable of generating JSON
@@ -24,7 +24,7 @@ You can add your own quizzes in three ways:
 - Ask the model to generate a quiz
 - Import the generated JSON
 
-### 3. Create your own JSON
+### 3. Create Your Own JSON
 - Create a JSON file following the model structure
 - Ensure strict adherence to the model format
 - Any deviation from the format may prevent the quiz from functioning
