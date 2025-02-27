@@ -1,0 +1,275 @@
+{
+  "Title": "Chap 3 - Cache Memory",
+  "quizz": [
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "RISC processors execute one instruction per cycle, requiring specific memory subsystem characteristics.",
+      "Possible answers": [
+        {
+          "answer": "Work at the processor's frequency",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Execute multiple instructions per cycle",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Answer instruction fetch and data requests in one cycle",
+          "answer id": 3,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Have unlimited storage capacity",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What are the requirements for the memory sub-system in a RISC processor?"
+    },
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "CMOS Static Memories meet speed requirements but have limited capacity.",
+      "Possible answers": [
+        {
+          "answer": "CMOS Static Memories",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "CMOS Dynamic Memories",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Hard Disks",
+          "answer id": 3,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Flash Memory",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Which memory technology can work at the processor's frequency and complete one access per cycle?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "Spatial locality predicts that recently accessed memory locations are likely to be accessed again soon.",
+      "Possible answers": [
+        {
+          "answer": "Temporal locality",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Spatial locality",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Random access",
+          "answer id": 3,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Sequential access",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Which principle states that addresses near the last accessed address have a higher probability of being accessed?"
+    },
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "Hit Rate is the probability that the requested data is present in the cache.",
+      "Possible answers": [
+        {
+          "answer": "Hit Rate",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Miss Rate",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Access Time",
+          "answer id": 3,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Cycle Time",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What is the term for the probability of finding requested data in a memory level?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "Blocks are the units of data transfer between cache and main memory.",
+      "Possible answers": [
+        {
+          "answer": "Bytes",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Blocks",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Words",
+          "answer id": 3,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Pages",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What are the units of data transferred between the cache and the primary memory?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "Direct Mapping, Set Associative, and Full Associative are the main cache organization types.",
+      "Possible answers": [
+        {
+          "answer": "Direct Mapping",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Random Mapping",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Set Associative",
+          "answer id": 3,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Full Associative",
+          "answer id": 4,
+          "is it correct or not": true
+        }
+      ],
+      "Question": "What are the types of cache organization discussed?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "In Direct Mapping, the least significant bits of the block number determine the cache place.",
+      "Possible answers": [
+        {
+          "answer": "Most significant bits",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Least significant bits",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Middle bits",
+          "answer id": 3,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Random bits",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "In Direct Mapping, which bits of the block number determine the cache place number?"
+    },
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "Write Through strategy ensures coherency by writing data to both cache and main memory.",
+      "Possible answers": [
+        {
+          "answer": "Write Back",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Write Through",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Write Around",
+          "answer id": 3,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Write Once",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Which cache write strategy ensures coherency by writing data to both cache and main memory simultaneously?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "The Snoopy mechanism monitors bus transfers to maintain cache coherency, especially in Write Back caches.",
+      "Possible answers": [
+        {
+          "answer": "A hardware component that monitors memory accesses.",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "The name of mechanism that monitors the bus",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "A type of cache memory.",
+          "answer id": 3,
+          "is it correct or not": false
+        },
+        {
+          "answer": "The main memory",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What is Snoopy in the context of cache coherency?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "Memory coherency is guaranteed if given conditions are met.",
+      "Possible answers": [
+        {
+          "answer": "If a processor writes a value and then reads the same address, it obtains the written value.",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "If one processor writes and then reads the value, another processor should allways get that value",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Data consistency is irrelevant.",
+          "answer id": 3,
+          "is it correct or not": false
+        },
+        {
+          "answer": "If one processor modify a value, the other processor should not see those changes",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What conditions are required for a memory system to be considered coherent?"
+    }
+  ]
+}
