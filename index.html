@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz WebApp</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="quiz-container">
+    <h1>Quiz WebApp</h1>
+
+    <div id="quiz-selection">
+      <h2>Sélectionnez un quiz</h2>
+      <select id="quiz-dropdown">
+        <option value="">Chargement des quiz...</option>
+      </select>
+      <button id="start-button">Commencer</button>
+    </div>
+
+    <div id="quiz-area" style="display: none;">
+      <div class="progress-container">
+        <div id="progress-bar"></div>
+      </div>
+
+      <div id="question-container">
+        <h2 id="question">Question ici</h2>
+        <div class="difficulty-badge" id="difficulty-badge">Facile</div>
+      </div>
+
+      <div id="answers-container">
+        <!-- Les réponses seront ajoutées ici par JavaScript -->
+      </div>
+
+      <div id="explanation-container" style="display: none;">
+        <h3>Explication</h3>
+        <p id="explanation-text"></p>
+      </div>
+
+      <div id="feedback-container" style="display: none;">
+        <p id="feedback-message"></p>
+      </div>
+
+      <div class="button-container">
+        <button id="submit-button">Soumettre</button>
+        <button id="next-button" style="display: none;">Question suivante</button>
+      </div>
+    </div>
+
+    <div class="quiz-info">
+      <p id="quiz-stats">Répondez aux questions pour voir vos statistiques</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "properties": {
+    "quizz": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Question": {
+            "type": "string"
+          },
+          "Possible answers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "answer id": {
+                  "type": "integer"
+                },
+                "answer": {
+                  "type": "string"
+                },
+                "is it correct or not": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "answer id",
+                "answer",
+                "is it correct or not"
+              ]
+            }
+          },
+          "Difficulty": {
+            "type": "string",
+            "enum": [
+              "Easy (*)",
+              "Medium (**)",
+              "Hard (***)"
+            ]
+          },
+          "Explanation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Question",
+          "Possible answers",
+          "Difficulty",
+          "Explanation"
+        ]
+      }
+    }
+  },
+  "required": [
+    "quizz"
+  ]
+}
