@@ -171,16 +171,60 @@ document.addEventListener('DOMContentLoaded', () => {
       updateQuizDropdown();
       updateSavedQuizzesList();
       
-      // Effacer les champs d'import
+      // Effacer les champs d'import et indiquer le succès
       if (!fromFile) {
-        jsonInput.value = '';
+        showImportSuccess(importJsonButton, `Quiz importé !`);
+        jsonInput.setAttribute('data-original', jsonInput.value); // Sauvegarder le contenu actuel
+      } else {
+        fileInput.value = '';
+        showImportSuccess(document.querySelector('.file-import label'), 
+          `Quiz importé !`);
       }
-      
-      alert(`Quiz "${quizContent.Title || 'Sans titre'}" ajouté avec succès !`);
     } catch (error) {
       console.error("Erreur lors de l'ajout du quiz:", error);
-      alert(`Impossible d'ajouter le quiz: ${error.message}`);
+      showImportError(fromFile ? document.querySelector('.file-import label') : importJsonButton, 
+        `Erreur: ${error.message}`);
     }
+  }
+
+  // Fonction pour indiquer le succès de l'importation
+  function showImportSuccess(element, message) {
+    // Sauvegarder le texte original
+    const originalText = element.textContent;
+    element.setAttribute('data-original-text', originalText);
+    
+    // Appliquer style et texte de succès
+    element.textContent = message;
+    element.classList.add('import-success');
+    element.disabled = true;
+    
+    // Programmer un retour à l'état normal après un délai
+    setTimeout(() => {
+      if (element.classList.contains('import-success')) {
+        element.textContent = element.getAttribute('data-original-text');
+        element.classList.remove('import-success');
+        element.disabled = false;
+      }
+    }, 5000);
+  }
+  
+  // Fonction pour indiquer une erreur d'importation
+  function showImportError(element, message) {
+    // Sauvegarder le texte original
+    const originalText = element.textContent;
+    element.setAttribute('data-original-text', originalText);
+    
+    // Appliquer style et texte d'erreur
+    element.textContent = message;
+    element.classList.add('import-error');
+    
+    // Programmer un retour à l'état normal après un délai
+    setTimeout(() => {
+      if (element.classList.contains('import-error')) {
+        element.textContent = element.getAttribute('data-original-text');
+        element.classList.remove('import-error');
+      }
+    }, 5000);
   }
 
   // Fonction pour supprimer un quiz
@@ -382,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fileInput.value = ''; // Réinitialiser l'input file
       } catch (error) {
         console.error("Erreur lors de la lecture du fichier JSON:", error);
-        alert(`Le fichier n'est pas un JSON valide: ${error.message}`);
+        showImportError(document.querySelector('.file-import label'), `Erreur: ${error.message}`);
       }
     };
     reader.readAsText(file);
@@ -392,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
   importJsonButton.addEventListener('click', () => {
     const jsonText = jsonInput.value.trim();
     if (!jsonText) {
-      alert("Veuillez entrer du JSON valide dans le champ.");
+      showImportError(importJsonButton, "Veuillez entrer du JSON valide");
       return;
     }
 
@@ -401,7 +445,19 @@ document.addEventListener('DOMContentLoaded', () => {
       addQuiz(quizContent);
     } catch (error) {
       console.error("Erreur lors de l'analyse du JSON:", error);
-      alert(`JSON invalide: ${error.message}`);
+      showImportError(importJsonButton, `JSON invalide: ${error.message}`);
+    }
+  });
+
+  // Réinitialiser l'état du bouton quand l'utilisateur modifie le contenu
+  jsonInput.addEventListener('input', () => {
+    if (jsonInput.getAttribute('data-original') !== jsonInput.value) {
+      if (importJsonButton.classList.contains('import-success') || 
+          importJsonButton.classList.contains('import-error')) {
+        importJsonButton.textContent = importJsonButton.getAttribute('data-original-text');
+        importJsonButton.classList.remove('import-success', 'import-error');
+        importJsonButton.disabled = false;
+      }
     }
   });
 

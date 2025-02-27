@@ -357,6 +357,7 @@ button:hover {
 #import-json-button {
   width: auto;
   margin-top: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #toggle-import-section {
@@ -387,4 +388,35 @@ button:hover {
   .file-import {
     margin-right: 15px;
   }
+}
+
+/* Styles pour les notifications d'importation */
+.import-success {
+  background-color: var(--correct-color) !important;
+  color: white !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.import-error {
+  background-color: var(--incorrect-color) !important;
+  color: white !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.file-import label {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.file-import label:hover {
+  background-color: var(--secondary-color);
+}
+
+#file-input {
+  display: none;
 }
