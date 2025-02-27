@@ -771,6 +771,32 @@ button:hover {
   background-color: var(--correct-color);
 }
 
+/* Style pour le bouton de copie du code JSON */
+.copy-json-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.copy-json-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.copy-json-btn.copied {
+  background-color: var(--correct-color);
+}
+
 /* Ajustements pour les blocs de code */
 .language-json {
   color: #333;

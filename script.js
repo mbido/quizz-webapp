@@ -622,6 +622,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const markdownContentElement = document.getElementById('markdown-content');
   
   // Configuration de marked pour ajouter la classe language-* aux blocs de code
+  // et ajouter un bouton de copie pour chaque bloc de code JSON
   marked.setOptions({
     highlight: function(code, lang) {
       return code;
@@ -638,6 +639,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // Déclencher la coloration syntaxique de Prism après l'insertion du contenu
     if (typeof Prism !== 'undefined') {
       Prism.highlightAll();
+    }
+    
+    // Ajouter un bouton de copie pour le bloc de code JSON
+    const jsonCodeBlock = markdownContentElement.querySelector('pre code.language-json');
+    if (jsonCodeBlock && jsonCodeBlock.parentElement) {
+      const copyJsonBtn = document.createElement('button');
+      copyJsonBtn.textContent = 'Copy JSON';
+      copyJsonBtn.className = 'copy-json-btn';
+      copyJsonBtn.addEventListener('click', function() {
+        navigator.clipboard.writeText(jsonCodeBlock.textContent).then(function() {
+          copyJsonBtn.textContent = 'Copied!';
+          copyJsonBtn.classList.add('copied');
+          
+          setTimeout(function() {
+            copyJsonBtn.textContent = 'Copy JSON';
+            copyJsonBtn.classList.remove('copied');
+          }, 2000);
+        }, function(err) {
+          console.error('Could not copy text: ', err);
+        });
+      });
+      
+      // Ajouter le bouton au parent du bloc de code
+      jsonCodeBlock.parentElement.style.position = 'relative';
+      jsonCodeBlock.parentElement.appendChild(copyJsonBtn);
     }
   }
 });
