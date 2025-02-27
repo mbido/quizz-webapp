@@ -19,6 +19,31 @@
         <option value="">Chargement des quiz...</option>
       </select>
       <button id="start-button">Commencer</button>
+
+      <div class="quiz-management">
+        <h3>Gérer les quiz</h3>
+        <div class="import-section">
+          <h4>Importer un quiz</h4>
+          <div class="import-options">
+            <div class="file-import">
+              <label for="file-input" class="import-label">Depuis un fichier JSON</label>
+              <input type="file" id="file-input" accept=".json" />
+            </div>
+            <div class="text-import">
+              <label for="json-input" class="import-label">Ou collez votre JSON</label>
+              <textarea id="json-input" placeholder="Collez le contenu JSON ici..."></textarea>
+              <button id="import-json-button">Importer</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="manage-section">
+          <h4>Quiz enregistrés</h4>
+          <div id="saved-quizzes-container">
+            <!-- La liste des quiz enregistrés sera ajoutée ici par JavaScript -->
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="quiz-area" style="display: none;">
