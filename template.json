@@ -50,9 +50,13 @@
           "Explanation"
         ]
       }
+    },
+    "Title": {
+      "type": "string"
     }
   },
   "required": [
-    "quizz"
+    "quizz",
+    "Title"
   ]
 }

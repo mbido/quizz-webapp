@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const progressBar = document.getElementById('progress-bar');
   const difficultyBadge = document.getElementById('difficulty-badge');
   const quizStats = document.getElementById('quiz-stats');
+  const quizTitleElement = document.getElementById('quiz-title');
 
   let currentQuestionIndex = 0;
   let quizData;
@@ -46,12 +47,26 @@ document.addEventListener('DOMContentLoaded', () => {
         startButton.disabled = true;
       } else {
         quizDropdown.innerHTML = '<option value="">Sélectionnez un quiz</option>';
-        quizFiles.forEach(quiz => {
-          const option = document.createElement('option');
-          option.value = quiz.file;
-          option.textContent = `Quiz ${quiz.name}`;
-          quizDropdown.appendChild(option);
-        });
+        
+        // Chargement des titres de quiz
+        for (const quiz of quizFiles) {
+          try {
+            const quizResponse = await fetch(`/quizzes/${quiz.file}`);
+            if (quizResponse.ok) {
+              const quizContent = await quizResponse.json();
+              const option = document.createElement('option');
+              option.value = quiz.file;
+              option.textContent = quizContent.Title || `Quiz ${quiz.name}`;
+              quizDropdown.appendChild(option);
+            }
+          } catch (error) {
+            console.error(`Erreur lors du chargement du quiz ${quiz.file}:`, error);
+            const option = document.createElement('option');
+            option.value = quiz.file;
+            option.textContent = `Quiz ${quiz.name}`;
+            quizDropdown.appendChild(option);
+          }
+        }
       }
     } catch (error) {
       console.error("Erreur lors du chargement de la liste des quizzes:", error);
@@ -73,6 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!quizData.quizz || quizData.quizz.length === 0) {
         throw new Error("Le fichier JSON du quiz est vide ou mal structuré.");
       }
+      
+      // Afficher le titre du quiz
+      quizTitleElement.textContent = quizData.Title || "Quiz";
       
       currentQuestionIndex = 0;
       correctAnswers = 0;

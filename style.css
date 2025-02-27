@@ -238,6 +238,16 @@ button:hover {
   font-size: 0.9rem;
 }
 
+.quiz-active-title {
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
 @media (max-width: 600px) {
   .quiz-container {
     padding: 15px;
