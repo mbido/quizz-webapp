@@ -1,0 +1,450 @@
+{
+  "Title": "Sequential Circuits Quiz (chap 1)",
+  "quizz": [
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "Sequential circuits rely on previous inputs, storing them. This differs from combinational circuits.",
+      "Possible answers": [
+        {
+          "answer": "Combinational circuits",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Sequential circuits",
+          "answer id": 2,
+          "is it correct or not": true
+        }
+      ],
+      "Question": "What type of circuit uses memory or internal states to maintain information about previous inputs?"
+    },
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "The correct code is explicitly stated in the example on page 1.",
+      "Possible answers": [
+        {
+          "answer": "000",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "101",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "111",
+          "answer id": 3,
+          "is it correct or not": false
+        },
+        {
+          "answer": "010",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "In the safe unlocking example (page 1), what is the correct code?"
+    },
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "The keypad in the example is limited to binary inputs.",
+      "Possible answers": [
+        {
+          "answer": "0 and 1",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "A and B",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "True and False",
+          "answer id": 3,
+          "is it correct or not": false
+        },
+        {
+          "answer": "On and Off",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What are the only two keys on the keypad in the safe unlocking example (page 1)?"
+    },
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "The state graph visually represents the states and transitions of a sequential circuit.",
+      "Possible answers": [
+        {
+          "answer": "State graph",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Truth table",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Boolean expression",
+          "answer id": 3,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Circuit diagram",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What is a common graphical representation of a sequential circuit (mentioned on page 3)?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "A state graph G is defined by a quintuple (X, Y, S, T, O).",
+      "Possible answers": [
+        {
+          "answer": "Input variables",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Output variables",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "States",
+          "answer id": 3,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Transitions",
+          "answer id": 4,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Output set conditions",
+          "answer id": 5,
+          "is it correct or not": true
+        }
+      ],
+      "Question": "In the state graph G = (X, Y, S, T, O) (page 3), what do X, Y, S, T, and O represent?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "Logarithmic encoding uses the minimum number of bits, while linear (one-hot) uses a bit per state.",
+      "Possible answers": [
+        {
+          "answer": "S0 = 000, S1 = 001, S2 = 010, S3 = 011, S4 = 100",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "S0 = 000, S1 = 001, S2 = 011, S3 = 010, S4 = 100",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "S0 = 000, S1 = 111, S2 = 010, S3 = 100, S4 = 101",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Which of the following represent states S0 up to S4 in a logarithmic manner(page 4)?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "M represents memory elements.",
+      "Possible answers": [
+        {
+          "answer": "S",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "M",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "T",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "In the representation of a sequential circuit with a state graph, what is used to define the number of memory elements required to represent S (page 3)?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "Linear uses a different representation.",
+      "Possible answers": [
+        {
+          "answer": "Linear (one hot)",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Binary",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Hexadecimal",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "How is named the method to represent S0 = 00001, S1 = 00010, S2 = 00100, S3 = 01000, S4 = 10000 ?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "Transition function is defined with sum of the Boolean function.",
+      "Possible answers": [
+        {
+          "answer": "mk",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "xk",
+          "answer id": 2,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "In a state graph, how do you call the function used to define the transition function? (page 5)"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "The output function describes how outputs are generated based on current state and, in a Mealy machine, inputs.",
+      "Possible answers": [
+        {
+          "answer": "yj",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "xj",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "mj",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What symbol defines the output function in the representation of a sequential circuit (page 7)?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "The output in this design depends on previous state.",
+      "Possible answers": [
+        {
+          "answer": "M4",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "M3",
+          "answer id": 2,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What is the output 'u' defined as in the example on page 8?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "It's an unlock example.",
+      "Possible answers": [
+        {
+          "answer": "k, t, l",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "a, b, c",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "x, y, z",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What are the input variables in the safe unlocking example (page 1)?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "The transition function determines the next state based on the current state and inputs.",
+      "Possible answers": [
+        {
+          "answer": "Sum of products",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Product of sums",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Sum of the Boolean functions of transitions targeting a state where mk=1",
+          "answer id": 3,
+          "is it correct or not": true
+        }
+      ],
+      "Question": "How is the transition function (mk) defined in a sequential circuit (page 5)?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "The state where the FSM is reset to.",
+      "Possible answers": [
+        {
+          "answer": "S0",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "S4",
+          "answer id": 2,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "In the provided finite state machine (FSM) example (Page 2), if input 'l' is active (while in state S4), which state does the FSM transition to ?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "u is the unlock signal. The FSM must reach a specific state to unlock.",
+      "Possible answers": [
+        {
+          "answer": "S0",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "S4",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "S3",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "In the state diagram on page 2, which state corresponds to u = 1 (unlock)?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Completeness, exclusivity, no sink states, and no source states must all be verified.",
+      "Possible answers": [
+        {
+          "answer": "Only completeness",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Completeness and exclusivity",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Completeness, exclusivity, no sink states, and no source states",
+          "answer id": 3,
+          "is it correct or not": true
+        }
+      ],
+      "Question": "When designing a sequential circuit and creating a state graph, what conditions must be checked to ensure its correctness (page 12)?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "A sink state has incoming transitions but no outgoing transitions.",
+      "Possible answers": [
+        {
+          "answer": "A state with no incoming transitions",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "A state with no outgoing transitions",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "A state with both incoming and outgoing transitions",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What is a sink state in a state graph (page 12)?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Check the slides to find the answer",
+      "Possible answers": [
+        {
+          "answer": "M0 = M0 ⋅ l + M4 ⋅ l",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "M0 = M0 ⋅ 1 + M4 ⋅ l",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "M0 = M1 ⋅ l + M4 ⋅ 1",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Using the state graph on page 6, provide the formula for the transition M0."
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Check the slides to find the answer",
+      "Possible answers": [
+        {
+          "answer": "M3",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "M4",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "M2",
+          "answer id": 3,
+          "is it correct or not": true
+        }
+      ],
+      "Question": "Using the state graph on page 6, Which transition does k ⋅ t in S1 represent?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Completeness ensures that for each state and input combination, there is a defined next state.  Exclusivity ensures that there's no ambiguity in transitions.",
+      "Possible answers": [
+        {
+          "answer": "Σfi = 0 and Σfi ⋅ fj = 1 for each state s",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Σfi = 1 and Σfi ⋅ fj = 0 for each state s",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Σfi = 1 and Σfi + fj = 0 for each state s",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "When designing a sequential circuit, which formulas are used for checking the completeness and the exclusivity, respectively, of a state s? (page 12) "
+    }
+  ]
+}

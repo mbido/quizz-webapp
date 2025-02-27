@@ -1,0 +1,410 @@
+{
+  "Title": "Multi-Processor Systems Quiz (chap 2)",
+  "quizz": [
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "A System Bus is defined as a communication pathway.",
+      "Possible answers": [
+        {
+          "answer": "A set of wires",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "A means of communication",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "A processing unit",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What is a System Bus primarily used for (page 3)?"
+    },
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "Multiple emitters can connect to a bus, unlike a single wire.",
+      "Possible answers": [
+        {
+          "answer": "One",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Several",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Zero",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "How many emitters can connect to a *Bus* (page 5)?"
+    },
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "Pi-Bus is explicitly stated as synchronous.",
+      "Possible answers": [
+        {
+          "answer": "Synchronous",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Asynchronous",
+          "answer id": 2,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Is Pi-Bus a synchronous or asynchronous on-chip system bus (page 9)?"
+    },
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "Three types of components: Master/Initiator, Slave/Target, and Arbiter/Controller.",
+      "Possible answers": [
+        {
+          "answer": "Master/Initiator",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Slave/Target",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Arbiter/Controller",
+          "answer id": 3,
+          "is it correct or not": true
+        },
+        {
+          "answer": "ALU",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What are the three types of components that may be connected to a System Bus (page 6/7)?"
+    },
+    {
+      "Difficulty": "Easy (*)",
+      "Explanation": "Ck provides the timing reference for operations on the Pi-Bus.",
+      "Possible answers": [
+        {
+          "answer": "Clock",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Reset",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Request",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "In the Pi-Bus, what is the signification of 'Ck' signal (page 11)?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "A transaction is defined as a complete sequence, encompassing multiple transfers if needed.",
+      "Possible answers": [
+        {
+          "answer": "Transfer",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Transaction",
+          "answer id": 2,
+          "is it correct or not": true
+        }
+      ],
+      "Question": "What term describes a *complete* sequence of exchanges on the bus (page 8)?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "The 'Sel' signal is specifically for slave selection.",
+      "Possible answers": [
+        {
+          "answer": "Address",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Select",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Opcode",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Which Pi-Bus signal is used for the selection of the slave (page 11)?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "Page 11 lists the signification of each signal, including 'Read'.",
+      "Possible answers": [
+        {
+          "answer": "Data transfer direction",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Address selection",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Bus arbitration",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What does the 'Read' signal on the Pi-Bus specify (page 11)?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "Opcodes are used to access bytes.",
+      "Possible answers": [
+        {
+          "answer": "Address",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Data",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Opcode",
+          "answer id": 3,
+          "is it correct or not": true
+        }
+      ],
+      "Question": "Which field on the Pi-Bus is used to specify byte selection within a word (page 11)?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "A Master requests, and the Arbiter grants.",
+      "Possible answers": [
+        {
+          "answer": "Request",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Grant",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Select",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Which signal do Masters assert to indicate they want to use the Pi-Bus (page 11)?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "WAT indicates a temporary inability to respond, while RTR is a permanent refusal.",
+      "Possible answers": [
+        {
+          "answer": "WAT",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "RDY",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "RTR",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Which 'Ack' (Acknowledge) code on the Pi-Bus signifies that the slave needs more time (Wait) (page 13)?"
+    },
+    {
+      "Difficulty": "Medium (**)",
+      "Explanation": "Page 12 explains the Opcode signification.",
+      "Possible answers": [
+        {
+          "answer": "HW0",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "HW1",
+          "answer id": 2,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Which Pi-Bus Opcode corresponds to 'Half Word 0' (page 12)?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "The BCU manages bus arbitration and control signals.",
+      "Possible answers": [
+        {
+          "answer": "Req, A, Lock, Ack",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Read, Write, Data, Address",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Clock, Reset, Power, Ground",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What are the input signals to the Pi-Bus Bus Controller (BCU) (page 17)?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Page 17 shows the outputs.",
+      "Possible answers": [
+        {
+          "answer": "Gnt, Sel, Tout",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Req, Addr, Data",
+          "answer id": 2,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What are the output signals from the Pi-Bus Bus Controller (BCU) (page 17)?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "The state transitions and conditions are explicitly shown in the diagram.",
+      "Possible answers": [
+        {
+          "answer": "Idle, Addr, Data, AdDt",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Start, Stop, Run, Pause",
+          "answer id": 2,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What are the states of the Pi-Bus Bus Controller (BCU) state machine (page 18)?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "The diagram on page 18 shows the state transitions and the conditions that cause them.",
+      "Possible answers": [
+        {
+          "answer": "Lock",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Rdy",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Req",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "What condition causes the BCU to transition from the 'AdDt' state back to itself (page 18)?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Page 18 shows the transition.",
+      "Possible answers": [
+        {
+          "answer": "Idle",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Data",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "AdDt",
+          "answer id": 3,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "From which state does the BCU transition to the 'Idle' state if there are no pending requests (Σi Reqi is false) (page 18)?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Fixed order is the simplest but can lead to unfairness.",
+      "Possible answers": [
+        {
+          "answer": "It's easy to implement",
+          "answer id": 1,
+          "is it correct or not": true
+        },
+        {
+          "answer": "It's fair",
+          "answer id": 2,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "If using the Pi-Bus, What's an advantage of using a fixed order for bus arbitration (page 22)?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Wrapped fixed order (round robin) is used for fairness.",
+      "Possible answers": [
+        {
+          "answer": "It requires a truly random selection",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "It assigns the lowest priority to the last selected master",
+          "answer id": 2,
+          "is it correct or not": true
+        }
+      ],
+      "Question": "Which method is described for a Round Robin on page 25 for selecting master?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Page 23 explains the disadvantage of random order.",
+      "Possible answers": [
+        {
+          "answer": "It is fair.",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "It needs a truly random selection.",
+          "answer id": 2,
+          "is it correct or not": true
+        }
+      ],
+      "Question": "What's the disadvantage about using a random order on Pi-Bus for selecting a master?"
+    }
+  ]
+}
