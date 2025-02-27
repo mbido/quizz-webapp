@@ -336,7 +336,14 @@ document.addEventListener('DOMContentLoaded', () => {
         break;
     }
 
-    currentQuestion["Possible answers"].forEach(answer => {
+    // Shuffle the possible answers array
+    const possibleAnswers = currentQuestion["Possible answers"];
+    for (let i = possibleAnswers.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [possibleAnswers[i], possibleAnswers[j]] = [possibleAnswers[j], possibleAnswers[i]];
+    }
+
+    possibleAnswers.forEach(answer => {
       const answerElement = document.createElement('div');
       answerElement.classList.add('answer-option');
       answerElement.textContent = answer.answer;

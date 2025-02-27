@@ -1,410 +1,275 @@
 {
-  "Title": "Multi-Processor Systems Quiz (chap 2)",
+  "Title": "Questions Difficiles sur les Systèmes Multi-Processeurs (chap 2)",
   "quizz": [
     {
-      "Difficulty": "Easy (*)",
-      "Explanation": "A System Bus is defined as a communication pathway.",
+      "Difficulty": "Hard (***)",
+      "Explanation": "Le mot 'bus' a une signification spécifique en électronique numérique. Il implique la possibilité pour *plusieurs* émetteurs d'utiliser le même support de communication, contrairement à une simple connexion point à point (fil). Un bus utilise des mécanismes (comme les émetteurs tri-state) pour gérer les conflits d'accès.",
       "Possible answers": [
         {
-          "answer": "A set of wires",
+          "answer": "Un bus est identique à une nappe de fils, chaque fil étant dédié à une connexion point à point.",
           "answer id": 1,
           "is it correct or not": false
         },
         {
-          "answer": "A means of communication",
-          "answer id": 2,
-          "is it correct or not": true
-        },
-        {
-          "answer": "A processing unit",
-          "answer id": 3,
-          "is it correct or not": false
-        }
-      ],
-      "Question": "What is a System Bus primarily used for (page 3)?"
-    },
-    {
-      "Difficulty": "Easy (*)",
-      "Explanation": "Multiple emitters can connect to a bus, unlike a single wire.",
-      "Possible answers": [
-        {
-          "answer": "One",
-          "answer id": 1,
-          "is it correct or not": false
-        },
-        {
-          "answer": "Several",
-          "answer id": 2,
-          "is it correct or not": true
-        },
-        {
-          "answer": "Zero",
-          "answer id": 3,
-          "is it correct or not": false
-        }
-      ],
-      "Question": "How many emitters can connect to a *Bus* (page 5)?"
-    },
-    {
-      "Difficulty": "Easy (*)",
-      "Explanation": "Pi-Bus is explicitly stated as synchronous.",
-      "Possible answers": [
-        {
-          "answer": "Synchronous",
-          "answer id": 1,
-          "is it correct or not": true
-        },
-        {
-          "answer": "Asynchronous",
+          "answer": "Un bus permet à un seul émetteur de communiquer avec un seul récepteur à la fois.",
           "answer id": 2,
           "is it correct or not": false
-        }
-      ],
-      "Question": "Is Pi-Bus a synchronous or asynchronous on-chip system bus (page 9)?"
-    },
-    {
-      "Difficulty": "Easy (*)",
-      "Explanation": "Three types of components: Master/Initiator, Slave/Target, and Arbiter/Controller.",
-      "Possible answers": [
-        {
-          "answer": "Master/Initiator",
-          "answer id": 1,
-          "is it correct or not": true
         },
         {
-          "answer": "Slave/Target",
-          "answer id": 2,
-          "is it correct or not": true
-        },
-        {
-          "answer": "Arbiter/Controller",
+          "answer": "Un bus est un support de communication partagé par plusieurs émetteurs potentiels, avec des mécanismes pour gérer les conflits.",
           "answer id": 3,
           "is it correct or not": true
         },
         {
-          "answer": "ALU",
+          "answer": "Un bus utilise uniquement des portes logiques ET pour contrôler l'accès.",
           "answer id": 4,
           "is it correct or not": false
         }
       ],
-      "Question": "What are the three types of components that may be connected to a System Bus (page 6/7)?"
-    },
-    {
-      "Difficulty": "Easy (*)",
-      "Explanation": "Ck provides the timing reference for operations on the Pi-Bus.",
-      "Possible answers": [
-        {
-          "answer": "Clock",
-          "answer id": 1,
-          "is it correct or not": true
-        },
-        {
-          "answer": "Reset",
-          "answer id": 2,
-          "is it correct or not": false
-        },
-        {
-          "answer": "Request",
-          "answer id": 3,
-          "is it correct or not": false
-        }
-      ],
-      "Question": "In the Pi-Bus, what is the signification of 'Ck' signal (page 11)?"
-    },
-    {
-      "Difficulty": "Medium (**)",
-      "Explanation": "A transaction is defined as a complete sequence, encompassing multiple transfers if needed.",
-      "Possible answers": [
-        {
-          "answer": "Transfer",
-          "answer id": 1,
-          "is it correct or not": false
-        },
-        {
-          "answer": "Transaction",
-          "answer id": 2,
-          "is it correct or not": true
-        }
-      ],
-      "Question": "What term describes a *complete* sequence of exchanges on the bus (page 8)?"
-    },
-    {
-      "Difficulty": "Medium (**)",
-      "Explanation": "The 'Sel' signal is specifically for slave selection.",
-      "Possible answers": [
-        {
-          "answer": "Address",
-          "answer id": 1,
-          "is it correct or not": false
-        },
-        {
-          "answer": "Select",
-          "answer id": 2,
-          "is it correct or not": true
-        },
-        {
-          "answer": "Opcode",
-          "answer id": 3,
-          "is it correct or not": false
-        }
-      ],
-      "Question": "Which Pi-Bus signal is used for the selection of the slave (page 11)?"
-    },
-    {
-      "Difficulty": "Medium (**)",
-      "Explanation": "Page 11 lists the signification of each signal, including 'Read'.",
-      "Possible answers": [
-        {
-          "answer": "Data transfer direction",
-          "answer id": 1,
-          "is it correct or not": true
-        },
-        {
-          "answer": "Address selection",
-          "answer id": 2,
-          "is it correct or not": false
-        },
-        {
-          "answer": "Bus arbitration",
-          "answer id": 3,
-          "is it correct or not": false
-        }
-      ],
-      "Question": "What does the 'Read' signal on the Pi-Bus specify (page 11)?"
-    },
-    {
-      "Difficulty": "Medium (**)",
-      "Explanation": "Opcodes are used to access bytes.",
-      "Possible answers": [
-        {
-          "answer": "Address",
-          "answer id": 1,
-          "is it correct or not": false
-        },
-        {
-          "answer": "Data",
-          "answer id": 2,
-          "is it correct or not": false
-        },
-        {
-          "answer": "Opcode",
-          "answer id": 3,
-          "is it correct or not": true
-        }
-      ],
-      "Question": "Which field on the Pi-Bus is used to specify byte selection within a word (page 11)?"
-    },
-    {
-      "Difficulty": "Medium (**)",
-      "Explanation": "A Master requests, and the Arbiter grants.",
-      "Possible answers": [
-        {
-          "answer": "Request",
-          "answer id": 1,
-          "is it correct or not": true
-        },
-        {
-          "answer": "Grant",
-          "answer id": 2,
-          "is it correct or not": false
-        },
-        {
-          "answer": "Select",
-          "answer id": 3,
-          "is it correct or not": false
-        }
-      ],
-      "Question": "Which signal do Masters assert to indicate they want to use the Pi-Bus (page 11)?"
-    },
-    {
-      "Difficulty": "Medium (**)",
-      "Explanation": "WAT indicates a temporary inability to respond, while RTR is a permanent refusal.",
-      "Possible answers": [
-        {
-          "answer": "WAT",
-          "answer id": 1,
-          "is it correct or not": true
-        },
-        {
-          "answer": "RDY",
-          "answer id": 2,
-          "is it correct or not": false
-        },
-        {
-          "answer": "RTR",
-          "answer id": 3,
-          "is it correct or not": false
-        }
-      ],
-      "Question": "Which 'Ack' (Acknowledge) code on the Pi-Bus signifies that the slave needs more time (Wait) (page 13)?"
-    },
-    {
-      "Difficulty": "Medium (**)",
-      "Explanation": "Page 12 explains the Opcode signification.",
-      "Possible answers": [
-        {
-          "answer": "HW0",
-          "answer id": 1,
-          "is it correct or not": true
-        },
-        {
-          "answer": "HW1",
-          "answer id": 2,
-          "is it correct or not": false
-        }
-      ],
-      "Question": "Which Pi-Bus Opcode corresponds to 'Half Word 0' (page 12)?"
+      "Question": "Pourquoi le terme 'bus' est-il utilisé en électronique numérique, et en quoi diffère-t-il d'une simple 'nappe de fils' ?"
     },
     {
       "Difficulty": "Hard (***)",
-      "Explanation": "The BCU manages bus arbitration and control signals.",
+      "Explanation": "Les émetteurs Tri-State ont trois états de sortie : 0, 1, et haute impédance (Z). La haute impédance est équivalente à un circuit ouvert, déconnectant effectivement l'émetteur du bus.  Ceci permet d'éviter les courts-circuits qui se produiraient si plusieurs émetteurs tentaient de forcer des niveaux logiques différents (0 et 1) sur le même fil.",
       "Possible answers": [
         {
-          "answer": "Req, A, Lock, Ack",
+          "answer": "0, 1, et inversion",
           "answer id": 1,
-          "is it correct or not": true
-        },
-        {
-          "answer": "Read, Write, Data, Address",
-          "answer id": 2,
           "is it correct or not": false
         },
         {
-          "answer": "Clock, Reset, Power, Ground",
+          "answer": "0, 1, et haute impédance (Z)",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "0, 1, et état intermédiaire",
           "answer id": 3,
           "is it correct or not": false
-        }
-      ],
-      "Question": "What are the input signals to the Pi-Bus Bus Controller (BCU) (page 17)?"
-    },
-    {
-      "Difficulty": "Hard (***)",
-      "Explanation": "Page 17 shows the outputs.",
-      "Possible answers": [
-        {
-          "answer": "Gnt, Sel, Tout",
-          "answer id": 1,
-          "is it correct or not": true
         },
         {
-          "answer": "Req, Addr, Data",
-          "answer id": 2,
+          "answer": "Positif, négatif, et zéro",
+          "answer id": 4,
           "is it correct or not": false
         }
       ],
-      "Question": "What are the output signals from the Pi-Bus Bus Controller (BCU) (page 17)?"
+      "Question": "Quels sont les trois états de sortie d'un émetteur Tri-State, et pourquoi sont-ils essentiels pour le fonctionnement d'un bus ?"
     },
     {
       "Difficulty": "Hard (***)",
-      "Explanation": "The state transitions and conditions are explicitly shown in the diagram.",
+      "Explanation": "Dans un système multi-processeur, *plusieurs* processeurs (maîtres/initiateurs) peuvent tenter d'accéder au bus simultanément. L'arbitre est le composant *centralisé* qui décide quel maître obtient l'accès au bus à un instant donné, selon un algorithme d'arbitrage (par exemple, priorité fixe, round-robin, etc.).  Les esclaves/cibles ne demandent *pas* l'accès au bus, ils ne font que *répondre* aux requêtes.",
       "Possible answers": [
         {
-          "answer": "Idle, Addr, Data, AdDt",
+          "answer": "Les maîtres (initiateurs) et les esclaves (cibles).",
           "answer id": 1,
-          "is it correct or not": true
-        },
-        {
-          "answer": "Start, Stop, Run, Pause",
-          "answer id": 2,
-          "is it correct or not": false
-        }
-      ],
-      "Question": "What are the states of the Pi-Bus Bus Controller (BCU) state machine (page 18)?"
-    },
-    {
-      "Difficulty": "Hard (***)",
-      "Explanation": "The diagram on page 18 shows the state transitions and the conditions that cause them.",
-      "Possible answers": [
-        {
-          "answer": "Lock",
-          "answer id": 1,
-          "is it correct or not": true
-        },
-        {
-          "answer": "Rdy",
-          "answer id": 2,
           "is it correct or not": false
         },
         {
-          "answer": "Req",
+          "answer": "Seulement les maîtres (initiateurs).",
+          "answer id": 2,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Seulement les esclaves (cibles).",
           "answer id": 3,
           "is it correct or not": false
+        },
+        {
+          "answer": "L'arbitre du bus lui-même.",
+          "answer id": 4,
+          "is it correct or not": false
         }
       ],
-      "Question": "What condition causes the BCU to transition from the 'AdDt' state back to itself (page 18)?"
+      "Question": "Dans un système multi-processeur avec un bus partagé, quels types de composants demandent l'accès au bus ?"
     },
     {
       "Difficulty": "Hard (***)",
-      "Explanation": "Page 18 shows the transition.",
+      "Explanation": "Un *transfert* est un échange *unique* de données (un mot, par exemple) sur le bus. Une *transaction* est une séquence *complète* d'échanges, depuis la connexion du maître jusqu'à sa déconnexion. Une transaction peut inclure *plusieurs* transferts (par exemple, lors d'un burst read/write ou lors d'un accès qui nécessite plusieurs cycles).",
       "Possible answers": [
         {
-          "answer": "Idle",
+          "answer": "Un transfert est une séquence d'échanges, tandis qu'une transaction est un échange unique.",
           "answer id": 1,
-          "is it correct or not": true
+          "is it correct or not": false
         },
         {
-          "answer": "Data",
+          "answer": "Un transfert et une transaction sont des termes interchangeables.",
           "answer id": 2,
           "is it correct or not": false
         },
         {
-          "answer": "AdDt",
+          "answer": "Une transaction est une séquence d'échanges, tandis qu'un transfert est un échange unique.",
           "answer id": 3,
-          "is it correct or not": false
-        }
-      ],
-      "Question": "From which state does the BCU transition to the 'Idle' state if there are no pending requests (Σi Reqi is false) (page 18)?"
-    },
-    {
-      "Difficulty": "Hard (***)",
-      "Explanation": "Fixed order is the simplest but can lead to unfairness.",
-      "Possible answers": [
-        {
-          "answer": "It's easy to implement",
-          "answer id": 1,
           "is it correct or not": true
         },
         {
-          "answer": "It's fair",
-          "answer id": 2,
+          "answer": "Une transaction ne peut contenir qu'un seul transfert.",
+          "answer id": 4,
           "is it correct or not": false
         }
       ],
-      "Question": "If using the Pi-Bus, What's an advantage of using a fixed order for bus arbitration (page 22)?"
+      "Question": "Quelle est la différence entre un *transfert* et une *transaction* sur un bus ?"
     },
     {
       "Difficulty": "Hard (***)",
-      "Explanation": "Wrapped fixed order (round robin) is used for fairness.",
+      "Explanation": "Dans un arbitrage à priorité fixe, chaque maître a une priorité *statique*. Si plusieurs maîtres demandent le bus simultanément, celui avec la priorité la plus élevée l'obtient. C'est simple à implémenter, mais *inéquitable* (un maître de faible priorité peut être indéfiniment privé d'accès).",
       "Possible answers": [
         {
-          "answer": "It requires a truly random selection",
+          "answer": "Il est équitable.",
           "answer id": 1,
           "is it correct or not": false
         },
         {
-          "answer": "It assigns the lowest priority to the last selected master",
+          "answer": "Il est complexe à mettre en œuvre.",
           "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Il est basé sur un ordre de priorité fixe et statique.",
+          "answer id": 3,
           "is it correct or not": true
+        },
+        {
+          "answer": "Il est basé sur un ordre de priorité aléatoire",
+          "answer id": 4,
+          "is it correct or not": false
         }
       ],
-      "Question": "Which method is described for a Round Robin on page 25 for selecting master?"
+      "Question": "Parmi ces affirmations concernant l'arbitrage à priorité fixe, laquelle est correct ?"
     },
     {
       "Difficulty": "Hard (***)",
-      "Explanation": "Page 23 explains the disadvantage of random order.",
+      "Explanation": "L'arbitrage 'Round Robin' (tourniquet) est un type d'arbitrage à priorité *circulaire*.  Après qu'un maître a utilisé le bus, la priorité *passe au maître suivant* dans un ordre cyclique.  Ceci assure une certaine *équité* (aucun maître n'est indéfiniment bloqué), mais cela ne signifie *pas* que les maîtres ont une priorité *égale*. La priorité est relative et change dynamiquement.",
       "Possible answers": [
         {
-          "answer": "It is fair.",
+          "answer": "Chaque maître a une priorité fixe et immuable.",
           "answer id": 1,
           "is it correct or not": false
         },
         {
-          "answer": "It needs a truly random selection.",
+          "answer": "La priorité est attribuée aléatoirement à chaque cycle.",
           "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "La priorité circule entre les maîtres selon un ordre cyclique.",
+          "answer id": 3,
           "is it correct or not": true
+        },
+        {
+          "answer": "Les maîtres de priorité inférieure ne peuvent jamais accéder au bus.",
+          "answer id": 4,
+          "is it correct or not": false
         }
       ],
-      "Question": "What's the disadvantage about using a random order on Pi-Bus for selecting a master?"
+      "Question": "Comment fonctionne l'arbitrage de type \"Round Robin\" (tourniquet) sur un bus ?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Le signal `LOCK` du Pi-Bus sert à indiquer qu'un maître a besoin d'effectuer *plusieurs transferts consécutifs* sans être interrompu (pour maintenir l'atomicité d'une opération, par exemple).  Il *ne* spécifie *pas* le type d'opération (lecture/écriture) ni la taille du transfert.",
+      "Possible answers": [
+        {
+          "answer": "Il indique que le maître effectue une opération de lecture.",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Il indique que le maître effectue une opération d'écriture.",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Il indique que le maître a besoin d'effectuer une série de transferts sans interruption.",
+          "answer id": 3,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Il indique la taille du transfert en cours.",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "À quoi sert le signal `LOCK` dans le protocole du Pi-Bus ?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Le signal `Tout` (TimeOut) est activé par le *contrôleur* du bus (et non par un maître ou un esclave) lorsqu'une transaction prend *trop de temps*. Ceci peut arriver si un esclave ne répond pas (par exemple, à cause d'un état `WAIT` prolongé ou d'une panne). `Tout` permet de *débloquer* le bus et d'éviter qu'il ne reste figé indéfiniment.",
+      "Possible answers": [
+        {
+          "answer": "Il est activé par un maître pour indiquer qu'il a terminé sa transaction.",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Il est activé par un esclave pour indiquer qu'il est prêt à recevoir des données.",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Il est activé par le contrôleur du bus pour signaler une transaction qui prend trop de temps.",
+          "answer id": 3,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Il est activé par un maître pour demander un accès prioritaire au bus.",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Quel composant active le signal `Tout` (TimeOut) sur le Pi-Bus, et dans quelle situation ?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Le code `RTR` (Retract) dans le signal `Ack` du Pi-Bus est utilisé par un *esclave* pour indiquer qu'il *ne peut pas répondre* à la requête du maître *et qu'il ne répondra pas*.  Ce n'est *pas* une simple attente (`WAT`), mais un *refus définitif*.  Le maître doit alors *abandonner* la transaction (il ne sert à rien de réessayer).",
+      "Possible answers": [
+        {
+          "answer": "Il indique que l'esclave est prêt à effectuer le transfert.",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Il indique que l'esclave a besoin de plus de temps pour répondre (attente).",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Il indique que l'esclave refuse la transaction et ne répondra pas.",
+          "answer id": 3,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Il indique que l'adresse demandée est hors limites.",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Que signifie le code `RTR` (Retract) dans le signal `Ack` (Acknowledge) du Pi-Bus ?"
+    },
+    {
+      "Difficulty": "Hard (***)",
+      "Explanation": "Un bus *on-chip* est conçu pour connecter des composants *à l'intérieur* d'un même circuit intégré (puce). Il peut donc fonctionner à la *même fréquence* que le processeur et utiliser des signaux synchrones.  Un bus *off-chip* connecte des composants *externes* (par exemple, sur une carte mère), ce qui impose des contraintes de distance, de capacité, et de synchronisation différentes, le rendant généralement *plus lent* et souvent *asynchrone*.",
+      "Possible answers": [
+        {
+          "answer": "Un bus on-chip est généralement plus lent qu'un bus off-chip.",
+          "answer id": 1,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Un bus on-chip est conçu pour connecter des composants externes à la puce.",
+          "answer id": 2,
+          "is it correct or not": false
+        },
+        {
+          "answer": "Un bus on-chip peut fonctionner à la même fréquence que le processeur, contrairement à un bus off-chip.",
+          "answer id": 3,
+          "is it correct or not": true
+        },
+        {
+          "answer": "Un bus off-chip est toujours synchrone.",
+          "answer id": 4,
+          "is it correct or not": false
+        }
+      ],
+      "Question": "Quelle est la principale différence entre un bus *on-chip* et un bus *off-chip*, concernant leur fréquence de fonctionnement et leur synchronisme ?"
     }
   ]
 }
