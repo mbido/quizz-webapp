@@ -36,20 +36,24 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to copy the template to clipboard
   if (copyTemplateBtn) {
     copyTemplateBtn.addEventListener('click', function() {
-      const templateCode = document.querySelector('.info-block.template pre code').textContent;
-      navigator.clipboard.writeText(templateCode).then(function() {
-        const btn = copyTemplateBtn;
-        const originalText = btn.textContent;
-        btn.textContent = 'Copied!';
-        btn.classList.add('copied');
-        
-        setTimeout(function() {
-          btn.textContent = originalText;
-          btn.classList.remove('copied');
-        }, 2000);
-      }, function(err) {
-        console.error('Could not copy text: ', err);
-      });
+      fetch('template.json')
+        .then(response => response.text())
+        .then(templateCode => {
+          navigator.clipboard.writeText(templateCode).then(function() {
+            const btn = copyTemplateBtn;
+            const originalText = btn.textContent;
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            
+            setTimeout(function() {
+              btn.textContent = originalText;
+              btn.classList.remove('copied');
+            }, 2000);
+          }, function(err) {
+            console.error('Could not copy text: ', err);
+          });
+        })
+        .catch(error => console.error('Error fetching template.json:', error));
     });
   }
 
