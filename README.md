@@ -2,20 +2,6 @@
 
 A web application for taking quizzes on various topics.
 
-## Features
-
-*   Select a quiz from a list of available quizzes.
-*   Answer multiple-choice questions.
-*   Receive immediate feedback on your answers.
-*   View explanations for each question.
-*   Track your progress and score.
-
-## Technologies Used
-
-*   HTML
-*   CSS
-*   JavaScript
-
 ## How to Run
 
 1.  Clone the repository: `git clone git@github.com:mbido/quizz-webapp.git`
